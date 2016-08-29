@@ -1,14 +1,14 @@
-import string
+resultado = open("saida.txt", "w")
+with open('mensagem.txt') as f:
+	entrada = f.readlines()
 
-entrada = open("mensagem.txt", "r")
+	for linha in entrada:
+		for letra in linha:
+			if letra in "AaEeIiOoUu":
+				resultado.write("*")
+			else:
+				resultado.write(letra)
 
-saida = entrada.replace("a","*")
-print (saida)
-saida = saida.replace("e","*")
-saida = saida.replace("i","*")
-saida = saida.replace("o","*")
-saida = saida.replace("u","*")
+print(resultado)
 
-novo = open("resposta.txt", "w")
 
-novo.write(novo)
